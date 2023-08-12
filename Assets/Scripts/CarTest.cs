@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarTest : MonoBehaviour
 {
-    public List<AxleInfo> axleInfos;
+    public List<AxleInfoTest> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public float brakeTorque;
@@ -37,7 +37,7 @@ public class CarTest : MonoBehaviour
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
-        foreach (AxleInfo axleInfo in axleInfos)
+        foreach (AxleInfoTest axleInfo in axleInfos)
         {
             if (axleInfo.steering)
             {
@@ -66,7 +66,7 @@ public class CarTest : MonoBehaviour
 }
 
 [System.Serializable]
-public class AxleInfo
+public class AxleInfoTest
 {
     public WheelCollider leftWheel;
     public WheelCollider rightWheel;
