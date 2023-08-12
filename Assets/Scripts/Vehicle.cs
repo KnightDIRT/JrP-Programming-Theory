@@ -22,7 +22,13 @@ public class Vehicle : MonoBehaviour
     [SerializeField] protected float brakeTorque;
 
     [SerializeField] private float measuredSpeed;
-    [SerializeField] private float measuredAvgRPM;
+
+    [SerializeField] private float _measuredAvgRPM;
+    private float measuredAvgRPM
+    {
+        get { return _measuredAvgRPM; }
+        set { _measuredAvgRPM = Math.Abs(value); }
+    }
 
     // finds the corresponding visual wheel
     // correctly applies the transform
