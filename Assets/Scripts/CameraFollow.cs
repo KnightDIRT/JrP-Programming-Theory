@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 offset;
 
     [SerializeField] private float cameraSpeed;
+    [SerializeField] private float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 targetDirection = (targetVehicle.transform.position - transform.position).normalized;
         Quaternion wantedRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, cameraSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, rotationSpeed * Time.deltaTime);
 
         Vector3 wantedPos = targetVehicle.transform.position - targetVehicle.transform.forward * offset.z - targetVehicle.transform.up * offset.y;
         transform.position = Vector3.Slerp(transform.position, wantedPos, cameraSpeed * Time.deltaTime);
