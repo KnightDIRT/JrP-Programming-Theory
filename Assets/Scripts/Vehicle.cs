@@ -24,6 +24,8 @@ public class Vehicle : MonoBehaviour
     [SerializeField] private float measuredSpeed;
 
     [SerializeField] private float _measuredAvgRPM;
+
+    // ENCAPSULATION
     private float measuredAvgRPM
     {
         get { return _measuredAvgRPM; }
@@ -73,6 +75,7 @@ public class Vehicle : MonoBehaviour
         measuredAvgRPM = totalRPM / (axleInfos.Count * 2);
     }
 
+    // ABSTRACTION
     protected virtual void DoSteering(AxleInfo axleInfo, float steering)
     {
         if (axleInfo.steering)

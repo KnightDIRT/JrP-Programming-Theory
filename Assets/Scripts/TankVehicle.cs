@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class TankVehicle : Vehicle
 {
+    // POLYMORPHISM
     protected override void DoSteering(AxleInfo axleInfo, float steering)
     {
         if (axleInfo.steering)
